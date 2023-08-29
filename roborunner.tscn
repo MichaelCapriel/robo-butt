@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rghca6r0hstx"]
+
+[ext_resource type="Texture2D" uid="uid://cp30v3n83k7p0" path="res://robot-preview.png" id="1_dbq2g"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Robot-preview" type="Sprite2D" parent="."]
+position = Vector2(-192, -207)
+texture = ExtResource("1_dbq2g")
