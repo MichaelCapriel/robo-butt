@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7o5dprjugcsf"]
 
-[ext_resource type="Texture2D" uid="uid://dxiii1carjos4" path="res://Assests/WarpCity1/Tilesets/WarpCity1Tileset.png" id="1_w4ugi"]
+[ext_resource type="Texture2D" uid="uid://dxiii1carjos4" path="res://Assests/Background/WarpCity1/Tilesets/WarpCity1Tileset.png" id="1_jedot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_332gp"]
-texture = ExtResource("1_w4ugi")
+texture = ExtResource("1_jedot")
 6:3/0 = 0
 6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:3/0/physics_layer_0/angular_velocity = 0.0
