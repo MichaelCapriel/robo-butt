@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3q4vcv4vh4sv"]
+
+[ext_resource type="PackedScene" uid="uid://cq0b643pyjddc" path="res://Scenes/Backgrounds/ScorllingBackground2.tscn" id="1_wltrv"]
+[ext_resource type="Texture2D" uid="uid://dn1datom7ekgf" path="res://Assests/Background/WarpCity1/Backgrounds/MidBackground/WC1buildings-bg.png" id="2_lqmej"]
+
+[sub_resource type="Shader" id="Shader_snyic"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment() {
+	vec2 u = UV;
+	u.x += scroll_speed*TIME;
+	vec4 col = texture(TEXTURE,u);
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nq32p"]
+resource_local_to_scene = true
+shader = SubResource("Shader_snyic")
+shader_parameter/scroll_speed = 0.1
+
+[node name="Midground" type="Node2D"]
+
+[node name="ScrollingBackground" parent="." instance=ExtResource("1_wltrv")]
+material = SubResource("ShaderMaterial_nq32p")
+offset_left = 1.0
+offset_top = 151.0
+offset_right = 289.0
+offset_bottom = 275.0
+scale = Vector2(3.99349, 3.99349)
+texture = ExtResource("2_lqmej")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5srxb3wbpkvc"
-path="res://.godot/imported/WC1near-buildings-bg.png-7065a4064a59281feb5dfa24516b1ee2.ctex"
+uid="uid://ciwfftscp0v7h"
+path="res://.godot/imported/Foreground.png-78d31d9970366bbb1ce4ba24be31943a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Background/WarpCity1/Backgrounds/NearBackground/WC1near-buildings-bg.png"
-dest_files=["res://.godot/imported/WC1near-buildings-bg.png-7065a4064a59281feb5dfa24516b1ee2.ctex"]
+source_file="res://Assests/Background/WarpCity1/Foreground.png"
+dest_files=["res://.godot/imported/Foreground.png-78d31d9970366bbb1ce4ba24be31943a.ctex"]
 
 [params]
 
