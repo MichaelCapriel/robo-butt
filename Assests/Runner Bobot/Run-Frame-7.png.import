@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp30v3n83k7p0"
-path="res://.godot/imported/robot-preview.png-707f8745e22b504003a03e9f37fcbf68.ctex"
+uid="uid://bqkt5n0esylwl"
+path="res://.godot/imported/Run-Frame-7.png-08581fc62922a5e57ae2a3ed6e232f95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://robot-preview.png"
-dest_files=["res://.godot/imported/robot-preview.png-707f8745e22b504003a03e9f37fcbf68.ctex"]
+source_file="res://Assests/Runner Bobot/Run-Frame-7.png"
+dest_files=["res://.godot/imported/Run-Frame-7.png-08581fc62922a5e57ae2a3ed6e232f95.ctex"]
 
 [params]
 
