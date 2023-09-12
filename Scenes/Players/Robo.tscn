@@ -1,0 +1,176 @@
+[gd_scene load_steps=26 format=3 uid="uid://cpmi6vkbprybn"]
+
+[ext_resource type="Texture2D" uid="uid://kchwbhvf5wgo" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-1.png" id="1_e1h2s"]
+[ext_resource type="Script" path="res://Scenes/Players/Robo.gd" id="1_rdv1r"]
+[ext_resource type="Texture2D" uid="uid://cfrxqn5ayu5ry" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-2.png" id="2_qhp2w"]
+[ext_resource type="Texture2D" uid="uid://dwxjfn33an813" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-3.png" id="3_y0qnu"]
+[ext_resource type="Texture2D" uid="uid://dnensiboelqkd" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-4.png" id="4_2slxa"]
+[ext_resource type="Texture2D" uid="uid://5r3iwyr4qjlx" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-5.png" id="5_s5xja"]
+[ext_resource type="Texture2D" uid="uid://rwgfqdxclinf" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-6.png" id="6_3ftha"]
+[ext_resource type="Texture2D" uid="uid://dan045hlhnbc7" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-7.png" id="7_ihevl"]
+[ext_resource type="Texture2D" uid="uid://cu4oluf5nphjq" path="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-2.png" id="9_f353t"]
+[ext_resource type="Texture2D" uid="uid://djh0uc7ls2d51" path="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-3.png" id="10_kwqxc"]
+[ext_resource type="Texture2D" uid="uid://d3eku3jcuabl2" path="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-4.png" id="11_s3qb5"]
+[ext_resource type="Texture2D" uid="uid://cw6t1h5ymj6g" path="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-5.png" id="12_oi42s"]
+[ext_resource type="Texture2D" uid="uid://qlumw5brtdv4" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-1.png" id="14_csqec"]
+[ext_resource type="Texture2D" uid="uid://dot1kutuo62w8" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-2.png" id="15_svl55"]
+[ext_resource type="Texture2D" uid="uid://wqtkdop3mj07" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-3.png" id="16_ci1lc"]
+[ext_resource type="Texture2D" uid="uid://dw0likulqd248" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-4.png" id="17_3a81e"]
+[ext_resource type="Texture2D" uid="uid://dnwtbfw6yo7o4" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-5.png" id="18_i4le8"]
+[ext_resource type="Texture2D" uid="uid://cm8xl2e20p5oe" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-6.png" id="19_53eja"]
+[ext_resource type="Texture2D" uid="uid://bqkt5n0esylwl" path="res://Assests/Sprites/Player-Robot/Runner Bobot/Run-Frame-7.png" id="20_houpf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s15aq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_oi42s")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e1h2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qhp2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y0qnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2slxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5xja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ftha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ihevl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_f353t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kwqxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s3qb5")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_csqec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_svl55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ci1lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3a81e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i4le8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_53eja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_houpf")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh4bl"]
+size = Vector2(20, 31.25)
+
+[sub_resource type="Animation" id="Animation_4kkyb"]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id="Animation_rhu48"]
+resource_name = "Run"
+length = 0.60001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.00692213),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00417445, 0.102893, 0.204002, 0.304914, 0.406525, 0.503975),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_b3sic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qurio"]
+_data = {
+"Jump": SubResource("Animation_4kkyb"),
+"RESET": SubResource("Animation_b3sic"),
+"Run": SubResource("Animation_rhu48")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rdv1r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s15aq")
+animation = &"Run"
+autoplay = "Run"
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38.5)
+scale = Vector2(9.52, 7.52)
+shape = SubResource("RectangleShape2D_qh4bl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+autoplay = "Run"
+libraries = {
+"": SubResource("AnimationLibrary_qurio")
+}

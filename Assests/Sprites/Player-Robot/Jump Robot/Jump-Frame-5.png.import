@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw6t1h5ymj6g"
-path="res://.godot/imported/Jump-Frame-1 1.png-99501ad97005df09af869966de6310c5.ctex"
+path="res://.godot/imported/Jump-Frame-5.png-a19bb7b63a7baeef1781976951cbea45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-1 1.png"
-dest_files=["res://.godot/imported/Jump-Frame-1 1.png-99501ad97005df09af869966de6310c5.ctex"]
+source_file="res://Assests/Sprites/Player-Robot/Jump Robot/Jump-Frame-5.png"
+dest_files=["res://.godot/imported/Jump-Frame-5.png-a19bb7b63a7baeef1781976951cbea45.ctex"]
 
 [params]
 

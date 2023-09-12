@@ -17,7 +17,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nq32p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wn1r7"]
 resource_local_to_scene = true
 shader = SubResource("Shader_snyic")
 shader_parameter/scroll_speed = 0.1
@@ -25,7 +25,7 @@ shader_parameter/scroll_speed = 0.1
 [node name="Midground" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_wltrv")]
-material = SubResource("ShaderMaterial_nq32p")
+material = SubResource("ShaderMaterial_wn1r7")
 offset_left = 1.0
 offset_top = 151.0
 offset_right = 289.0

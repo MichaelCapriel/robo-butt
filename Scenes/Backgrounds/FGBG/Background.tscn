@@ -17,7 +17,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sswu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6qod"]
 resource_local_to_scene = true
 shader = SubResource("Shader_x7xpc")
 shader_parameter/scroll_speed = 0.05
@@ -25,7 +25,7 @@ shader_parameter/scroll_speed = 0.05
 [node name="Node2D" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_mupht")]
-material = SubResource("ShaderMaterial_8sswu")
+material = SubResource("ShaderMaterial_a6qod")
 offset_top = -240.0
 offset_right = 256.0
 scale = Vector2(4.49825, 4.51558)

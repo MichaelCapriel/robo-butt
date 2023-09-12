@@ -17,18 +17,20 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2wqh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shu2k"]
 resource_local_to_scene = true
 shader = SubResource("Shader_0pe3g")
 shader_parameter/scroll_speed = 0.15
 
 [node name="NearBG" type="Node2D"]
+z_as_relative = false
+texture_filter = 1
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_uagrx")]
-material = SubResource("ShaderMaterial_j2wqh")
+material = SubResource("ShaderMaterial_shu2k")
 offset_left = 4.0
-offset_top = 181.0
+offset_top = 170.0
 offset_right = 513.0
-offset_bottom = 390.0
-scale = Vector2(2.26871, 2.25809)
+offset_bottom = 379.0
+scale = Vector2(1.96509, 2.00316)
 texture = ExtResource("2_ai28c")
