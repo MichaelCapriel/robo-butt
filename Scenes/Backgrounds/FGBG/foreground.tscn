@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0bdbolj0gdg6"]
+
+[ext_resource type="PackedScene" uid="uid://bwu6oqocfmsb4" path="res://Scenes/Backgrounds/ScorllingBackground.tscn" id="1_y08hc"]
+[ext_resource type="Texture2D" uid="uid://ciwfftscp0v7h" path="res://Assests/Background/WarpCity1/Foreground.png" id="2_orhug"]
+
+[sub_resource type="Shader" id="Shader_mfr0x"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment() {
+	vec2 u = UV;
+	u.x += scroll_speed*TIME;
+	vec4 col = texture(TEXTURE,u);
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4nkxk"]
+resource_local_to_scene = true
+shader = SubResource("Shader_mfr0x")
+shader_parameter/scroll_speed = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsupv"]
+size = Vector2(1154, 51.5)
+
+[node name="Foreground" type="Node2D"]
+
+[node name="ScrollingBackground" parent="." instance=ExtResource("1_y08hc")]
+material = SubResource("ShaderMaterial_4nkxk")
+offset_right = 280.0
+offset_bottom = 16.0
+scale = Vector2(4.11204, 3.24223)
+texture = ExtResource("2_orhug")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(575, 26.25)
+shape = SubResource("RectangleShape2D_lsupv")

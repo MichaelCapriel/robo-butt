@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://drxuoew3d7xea"]
+
+[ext_resource type="PackedScene" uid="uid://cq0b643pyjddc" path="res://Scenes/Backgrounds/ScorllingBackground2.tscn" id="1_uagrx"]
+[ext_resource type="Texture2D" uid="uid://c3471ajtgc74t" path="res://Assests/Background/WarpCity1/Backgrounds/NearBackground/BuildingsNBG.png" id="2_ai28c"]
+
+[sub_resource type="Shader" id="Shader_0pe3g"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment() {
+	vec2 u = UV;
+	u.x += scroll_speed*TIME;
+	vec4 col = texture(TEXTURE,u);
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shu2k"]
+resource_local_to_scene = true
+shader = SubResource("Shader_0pe3g")
+shader_parameter/scroll_speed = 0.15
+
+[node name="NearBG" type="Node2D"]
+z_as_relative = false
+texture_filter = 1
+
+[node name="ScrollingBackground" parent="." instance=ExtResource("1_uagrx")]
+material = SubResource("ShaderMaterial_shu2k")
+offset_left = 4.0
+offset_top = 170.0
+offset_right = 513.0
+offset_bottom = 379.0
+scale = Vector2(1.96509, 2.00316)
+texture = ExtResource("2_ai28c")

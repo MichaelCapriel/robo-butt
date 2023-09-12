@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://biy8ikmcr15c2"]
+
+[ext_resource type="PackedScene" uid="uid://cq0b643pyjddc" path="res://Scenes/Backgrounds/ScorllingBackground2.tscn" id="1_mupht"]
+[ext_resource type="Texture2D" uid="uid://bpnqv6jx2jm58" path="res://Assests/Background/WarpCity1/Backgrounds/ParalaxBackground/WC1skyline-ab.png" id="2_1pijn"]
+
+[sub_resource type="Shader" id="Shader_x7xpc"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment() {
+	vec2 u = UV;
+	u.x += scroll_speed*TIME;
+	vec4 col = texture(TEXTURE,u);
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6qod"]
+resource_local_to_scene = true
+shader = SubResource("Shader_x7xpc")
+shader_parameter/scroll_speed = 0.05
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ScrollingBackground" parent="." instance=ExtResource("1_mupht")]
+material = SubResource("ShaderMaterial_a6qod")
+offset_top = -240.0
+offset_right = 256.0
+scale = Vector2(4.49825, 4.51558)
+texture = ExtResource("2_1pijn")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cco34s8em48qf"]
+
+[ext_resource type="Script" path="res://Scenes/Obsticals/Spikes.gd" id="1_1wtw7"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_1wtw7")
