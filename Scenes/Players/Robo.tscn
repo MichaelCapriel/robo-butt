@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cpmi6vkbprybn"]
+[gd_scene load_steps=27 format=3 uid="uid://cpmi6vkbprybn"]
 
 [ext_resource type="Texture2D" uid="uid://kchwbhvf5wgo" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-1.png" id="1_e1h2s"]
 [ext_resource type="Script" path="res://Scenes/Players/Robo.gd" id="1_rdv1r"]
@@ -102,10 +102,38 @@ size = Vector2(20, 31.25)
 
 [sub_resource type="Animation" id="Animation_4kkyb"]
 resource_name = "Jump"
+length = 0.30001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00561756, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_b3sic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="Animation" id="Animation_rhu48"]
 resource_name = "Run"
-length = 0.60001
+length = 1.00001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -132,8 +160,9 @@ tracks/1/keys = {
 "values": [0, 2, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_b3sic"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_7y0hh"]
+resource_name = "Fall"
+length = 2.00001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,14 +170,15 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.98679),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
+"values": [0, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qurio"]
 _data = {
+"Fall": SubResource("Animation_7y0hh"),
 "Jump": SubResource("Animation_4kkyb"),
 "RESET": SubResource("Animation_b3sic"),
 "Run": SubResource("Animation_rhu48")
@@ -170,7 +200,6 @@ shape = SubResource("RectangleShape2D_qh4bl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
-autoplay = "Run"
 libraries = {
 "": SubResource("AnimationLibrary_qurio")
 }

@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0bdbolj0gdg6"]
 
 [ext_resource type="PackedScene" uid="uid://bwu6oqocfmsb4" path="res://Scenes/Backgrounds/ScorllingBackground.tscn" id="1_y08hc"]
-[ext_resource type="Texture2D" uid="uid://ciwfftscp0v7h" path="res://Assests/Background/WarpCity1/Foreground.png" id="2_orhug"]
+[ext_resource type="Texture2D" uid="uid://ciwfftscp0v7h" path="res://Assests/Background/WarpCity1/Backgrounds/Foreground/Foreground.png" id="2_orhug"]
+
 
 [sub_resource type="Shader" id="Shader_mfr0x"]
 resource_local_to_scene = true
