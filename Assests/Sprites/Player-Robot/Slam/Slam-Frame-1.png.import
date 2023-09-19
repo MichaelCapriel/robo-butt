@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ts56lysdsdw"
-path="res://.godot/imported/Spikes_1.png-2fa6c2517d583d192122faefb6c96c6b.ctex"
+uid="uid://cl5f2jd3itlo1"
+path="res://.godot/imported/Slam-Frame-1.png-ae01808a11278eb69d318e57bb97f8fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Sprites/Items/Hazards/Spikes_1.png"
-dest_files=["res://.godot/imported/Spikes_1.png-2fa6c2517d583d192122faefb6c96c6b.ctex"]
+source_file="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-1.png"
+dest_files=["res://.godot/imported/Slam-Frame-1.png-ae01808a11278eb69d318e57bb97f8fd.ctex"]
 
 [params]
 

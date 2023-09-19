@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cco34s8em48qf"]
+
+[ext_resource type="Script" path="res://Scenes/Obsticals/Spikes.gd" id="1_1wtw7"]
+[ext_resource type="Texture2D" uid="uid://c6ts56lysdsdw" path="res://Assests/Sprites/Items/Hazards/Spikes_1.png" id="2_i13s1"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_1wtw7")
+
+[node name="Spikes1" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("2_i13s1")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3q4vcv4vh4sv" path="res://Scenes/Backgrounds/FGBG/midground.tscn" id="2_ah1yk"]
 [ext_resource type="PackedScene" uid="uid://d0bdbolj0gdg6" path="res://Scenes/Backgrounds/FGBG/foreground.tscn" id="2_q5j2c"]
 [ext_resource type="Texture2D" uid="uid://dxiii1carjos4" path="res://Assests/Background/WarpCity1/Tilesets/WarpCity1Tileset.png" id="4_okono"]
-[ext_resource type="PackedScene" uid="uid://cpmi6vkbprybn" path="res://Scenes/Players/Robo.tscn" id="6_81qqv"]
+[ext_resource type="PackedScene" uid="uid://cpmi6vkbprybn" path="res://Scenes/Players/Main Robot/Robo.tscn" id="6_81qqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dmga"]
 texture = ExtResource("4_okono")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpmi6vkbprybn"]
+[gd_scene load_steps=31 format=3 uid="uid://cpmi6vkbprybn"]
 
+[ext_resource type="Script" path="res://Scenes/Players/Main Robot/Robo.gd" id="1_aclk6"]
 [ext_resource type="Texture2D" uid="uid://kchwbhvf5wgo" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-1.png" id="1_e1h2s"]
-[ext_resource type="Script" path="res://Scenes/Players/Robo.gd" id="1_rdv1r"]
+[ext_resource type="Texture2D" uid="uid://cl5f2jd3itlo1" path="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-1.png" id="2_pe0ka"]
 [ext_resource type="Texture2D" uid="uid://cfrxqn5ayu5ry" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-2.png" id="2_qhp2w"]
+[ext_resource type="Texture2D" uid="uid://cyv4vy24dgwnw" path="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-2.png" id="3_mvpml"]
 [ext_resource type="Texture2D" uid="uid://dwxjfn33an813" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-3.png" id="3_y0qnu"]
 [ext_resource type="Texture2D" uid="uid://dnensiboelqkd" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-4.png" id="4_2slxa"]
+[ext_resource type="Texture2D" uid="uid://c2apnu7ssubgv" path="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-3.png" id="4_gy32j"]
 [ext_resource type="Texture2D" uid="uid://5r3iwyr4qjlx" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-5.png" id="5_s5xja"]
 [ext_resource type="Texture2D" uid="uid://rwgfqdxclinf" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-6.png" id="6_3ftha"]
 [ext_resource type="Texture2D" uid="uid://dan045hlhnbc7" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-7.png" id="7_ihevl"]
@@ -95,10 +98,40 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pe0ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mvpml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gy32j")
+}],
+"loop": true,
+"name": &"Slam",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh4bl"]
 size = Vector2(20, 31.25)
+
+[sub_resource type="Animation" id="Animation_7y0hh"]
+resource_name = "Fall"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
 
 [sub_resource type="Animation" id="Animation_4kkyb"]
 resource_name = "Jump"
@@ -160,9 +193,8 @@ tracks/1/keys = {
 "values": [0, 2, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_7y0hh"]
-resource_name = "Fall"
-length = 2.00001
+[sub_resource type="Animation" id="Animation_06tek"]
+resource_name = "Slam"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -170,10 +202,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.98679),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 0]
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qurio"]
@@ -181,11 +213,12 @@ _data = {
 "Fall": SubResource("Animation_7y0hh"),
 "Jump": SubResource("Animation_4kkyb"),
 "RESET": SubResource("Animation_b3sic"),
-"Run": SubResource("Animation_rhu48")
+"Run": SubResource("Animation_rhu48"),
+"Slam": SubResource("Animation_06tek")
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_rdv1r")
+script = ExtResource("1_aclk6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s15aq")

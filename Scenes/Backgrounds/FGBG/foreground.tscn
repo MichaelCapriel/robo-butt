@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bwu6oqocfmsb4" path="res://Scenes/Backgrounds/ScorllingBackground.tscn" id="1_y08hc"]
 [ext_resource type="Texture2D" uid="uid://ciwfftscp0v7h" path="res://Assests/Background/WarpCity1/Backgrounds/Foreground/Foreground.png" id="2_orhug"]
 
-
 [sub_resource type="Shader" id="Shader_mfr0x"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
@@ -18,7 +17,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4nkxk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0e8s"]
 resource_local_to_scene = true
 shader = SubResource("Shader_mfr0x")
 shader_parameter/scroll_speed = 0.3
@@ -29,7 +28,7 @@ size = Vector2(1154, 51.5)
 [node name="Foreground" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_y08hc")]
-material = SubResource("ShaderMaterial_4nkxk")
+material = SubResource("ShaderMaterial_s0e8s")
 offset_right = 280.0
 offset_bottom = 16.0
 scale = Vector2(4.11204, 3.24223)
