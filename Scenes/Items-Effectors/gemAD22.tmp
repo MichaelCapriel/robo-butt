@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b10hy1asxhbav"]
+
+[ext_resource type="Texture2D" uid="uid://xd372bwjy7bk" path="res://Assests/Sprites/Items/Gem/Gem_1.png" id="1_nomfe"]
+[ext_resource type="Script" path="res://Scripts/Gems.gd" id="2_15let"]
+
+[node name="Gem" type="Node2D"]
+
+[node name="Gem1" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("1_nomfe")
+script = ExtResource("2_15let")

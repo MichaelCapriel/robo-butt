@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://cpmi6vkbprybn"]
 
-[ext_resource type="Script" path="res://Scenes/Players/Main Robot/Robo.gd" id="1_aclk6"]
 [ext_resource type="Texture2D" uid="uid://kchwbhvf5wgo" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-1.png" id="1_e1h2s"]
+[ext_resource type="Script" path="res://Scripts/Robo.gd" id="1_vx77d"]
 [ext_resource type="Texture2D" uid="uid://cl5f2jd3itlo1" path="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-1.png" id="2_pe0ka"]
 [ext_resource type="Texture2D" uid="uid://cfrxqn5ayu5ry" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-2.png" id="2_qhp2w"]
 [ext_resource type="Texture2D" uid="uid://cyv4vy24dgwnw" path="res://Assests/Sprites/Player-Robot/Slam/Slam-Frame-2.png" id="3_mvpml"]
@@ -218,7 +218,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_aclk6")
+script = ExtResource("1_vx77d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s15aq")
