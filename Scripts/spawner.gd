@@ -8,6 +8,6 @@ var selected_scene_index = 0
 
 func _on_timer_timeout():
 	random_scene.randomize()
-	selected_scene_index = random_scene.randf_range(0, scenes.size()-1)
+	selected_scene_index = random_scene.randf_range(0, scenes.size())
 	var _tmp = scenes[selected_scene_index].instantiate()
 	add_child(_tmp)
