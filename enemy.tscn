@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwp1nmo0tiir5"]
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d0bdbolj0gdg6" path="res://Scenes/Backgrounds/FGBG/foreground.tscn" id="2_q5j2c"]
 [ext_resource type="Texture2D" uid="uid://dxiii1carjos4" path="res://Assests/Background/WarpCity1/Tilesets/WarpCity1Tileset.png" id="4_okono"]
 [ext_resource type="PackedScene" uid="uid://cpmi6vkbprybn" path="res://Scenes/Players/Main Robot/Robo.tscn" id="6_81qqv"]
-[ext_resource type="PackedScene" uid="uid://crlftqmd4tj0w" path="res://Scenes/Spawners/spawner.tscn" id="7_ab1r4"]
-[ext_resource type="PackedScene" uid="uid://b10hy1asxhbav" path="res://Scenes/Items-Effectors/gem.tscn" id="8_qharn"]
+[ext_resource type="PackedScene" uid="uid://cptxah3l8j1bc" path="res://Scenes/Spawners/spawner.tscn" id="7_ab1r4"]
+[ext_resource type="PackedScene" uid="uid://b1is1ln2jeujs" path="res://Scenes/Items-Effectors/gem.tscn" id="8_qharn"]
 [ext_resource type="PackedScene" uid="uid://cco34s8em48qf" path="res://Scenes/Obsticals/Hazards/Spikes.tscn" id="9_db0oq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dmga"]
