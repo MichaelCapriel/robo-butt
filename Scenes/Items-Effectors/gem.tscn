@@ -1,11 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1is1ln2jeujs"]
+[gd_scene load_steps=5 format=3 uid="uid://b1is1ln2jeujs"]
 
 [ext_resource type="Texture2D" uid="uid://xd372bwjy7bk" path="res://Assests/Sprites/Items/Gem/Gem_1.png" id="1_nomfe"]
 [ext_resource type="Script" path="res://Scripts/gems.gd" id="1_sfvbv"]
+[ext_resource type="PackedScene" uid="uid://83dohjd0tcp3" path="res://Scenes/Items-Effectors/PickUp.tscn" id="2_i0d7x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uy6c"]
 
 [node name="Gem" type="Node2D"]
 script = ExtResource("1_sfvbv")
 
+[node name="PickUp" parent="." instance=ExtResource("2_i0d7x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUp"]
+position = Vector2(0, 4)
+scale = Vector2(2.04, 1.74646)
+shape = SubResource("CircleShape2D_4uy6c")
+
 [node name="Gem1" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
 texture = ExtResource("1_nomfe")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="PickUp" to="." method="_on_pick_up_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

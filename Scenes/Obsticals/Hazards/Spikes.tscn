@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cco34s8em48qf"]
+[gd_scene load_steps=5 format=3 uid="uid://cco34s8em48qf"]
 
 [ext_resource type="Script" path="res://Scripts/Spikes.gd" id="1_lcutx"]
 [ext_resource type="Texture2D" uid="uid://c6ts56lysdsdw" path="res://Assests/Sprites/Items/Hazards/Spikes_1.png" id="2_i13s1"]
+[ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="2_rns6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q82x1"]
+size = Vector2(44, 17)
 
 [node name="Spikes" type="Node2D"]
 script = ExtResource("1_lcutx")
+scroll_speed = 6.75
 
 [node name="Spikes1" type="Sprite2D" parent="."]
 texture = ExtResource("2_i13s1")
+
+[node name="DMG" parent="." instance=ExtResource("2_rns6i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_q82x1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="DMG" to="." method="_on_dmg_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

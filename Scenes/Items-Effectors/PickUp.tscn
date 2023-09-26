@@ -1,3 +1,3 @@
 [gd_scene format=3 uid="uid://83dohjd0tcp3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="PickUp" type="Area2D"]

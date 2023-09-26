@@ -4,6 +4,11 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
 
+var score = 0
+
+func _ready():
+	Signals.connect("rewardPlayer", self, "rewardPlayer")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -26,3 +31,5 @@ func _physics_process(delta):
 		anim.play("Fall")
 
 	move_and_slide()
+
+func rewardPlayer(scoreToAdd)
