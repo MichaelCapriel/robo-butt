@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpmi6vkbprybn"]
+[gd_scene load_steps=32 format=3 uid="uid://cpmi6vkbprybn"]
 
 [ext_resource type="Texture2D" uid="uid://kchwbhvf5wgo" path="res://Assests/Sprites/Player-Robot/Idle Robot/Idle-Frame-1.png" id="1_e1h2s"]
 [ext_resource type="Script" path="res://Scripts/Robo.gd" id="1_vx77d"]
@@ -101,16 +101,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pe0ka")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_mvpml")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_gy32j")
 }],
 "loop": true,
-"name": &"Slam",
+"name": &"SlamDOWN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pe0ka")
+}],
+"loop": true,
+"name": &"SlamStart",
 "speed": 5.0
 }]
 
@@ -163,10 +168,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_rhu48"]
 resource_name = "Run"
-length = 1.00001
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -195,6 +236,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_06tek"]
 resource_name = "Slam"
+length = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -202,10 +244,90 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_ground_pound_move"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_4jctc"]
+resource_name = "SlamDOWN"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.184054, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(0, 92), Vector2(1, 116), Vector2(1, 116), Vector2(-1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.184054, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.265, 0.4), Vector2(1.4, 0.25), Vector2(1.4, 0.25), Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.40049),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_end_ground_pound"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qurio"]
@@ -214,17 +336,17 @@ _data = {
 "Jump": SubResource("Animation_4kkyb"),
 "RESET": SubResource("Animation_b3sic"),
 "Run": SubResource("Animation_rhu48"),
-"Slam": SubResource("Animation_06tek")
+"SlamDOWN": SubResource("Animation_4jctc"),
+"SlamStart": SubResource("Animation_06tek")
 }
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_vx77d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_s15aq")
 animation = &"Run"
-autoplay = "Run"
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 38.5)
@@ -233,6 +355,7 @@ shape = SubResource("RectangleShape2D_qh4bl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
+autoplay = "Run"
 libraries = {
 "": SubResource("AnimationLibrary_qurio")
 }

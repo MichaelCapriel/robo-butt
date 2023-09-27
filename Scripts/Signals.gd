@@ -1,3 +1,3 @@
-signal killPlayer
-signal rewardPlayer
-signal updateScore
+#signal killPlayer
+#signal rewardPlayer
+#signal updateScore
