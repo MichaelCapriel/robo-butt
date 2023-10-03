@@ -51,7 +51,7 @@ func _ground_pound_move():
 
 func _collide(collision: KinematicCollision2D):
 	if is_on_floor() and is_ground_pound:
-		$AnimationPlayer.play("SlamDOWN")
+		#$AnimationPlayer.play("SlamDOWN")
 		_end_ground_pound()
 		print("slam_end")
 
