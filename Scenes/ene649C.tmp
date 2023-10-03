@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://tthcvddrm1xa"]
+
+[ext_resource type="Script" path="res://Scenes/enemies.gd" id="1_kw54e"]
+[ext_resource type="Texture2D" uid="uid://djxgi2vs77tci" path="res://Assests/Sprites/Enemies/idle1.png" id="2_afxce"]
+[ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="3_d2dhs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
+
+[node name="enemies" type="Node2D"]
+script = ExtResource("1_kw54e")
+
+[node name="Idle1" type="Sprite2D" parent="."]
+position = Vector2(-1, -32)
+texture = ExtResource("2_afxce")
+
+[node name="DMG" parent="." instance=ExtResource("3_d2dhs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
+position = Vector2(0, -30)
+scale = Vector2(1.4, 2.32657)
+shape = SubResource("CircleShape2D_ek8gv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="DMG" to="." method="_on_dmg_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
