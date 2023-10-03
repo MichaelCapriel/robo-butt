@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://tthcvddrm1xa"]
 
-[ext_resource type="Script" path="res://Scenes/enemies.gd" id="1_kw54e"]
-[ext_resource type="Texture2D" uid="uid://djxgi2vs77tci" path="res://Assests/Sprites/Enemies/idle1.png" id="2_afxce"]
-[ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="3_d2dhs"]
+[ext_resource type="Script" path="res://Scripts/enemies.gd" id="1_8ht00"]
+[ext_resource type="Texture2D" uid="uid://djxgi2vs77tci" path="res://Assests/Sprites/Enemies/idle1.png" id="2_n1unb"]
+[ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="3_amcns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
 
 [node name="enemies" type="Node2D"]
-script = ExtResource("1_kw54e")
+script = ExtResource("1_8ht00")
 
 [node name="Idle1" type="Sprite2D" parent="."]
 position = Vector2(-1, -32)
-texture = ExtResource("2_afxce")
+texture = ExtResource("2_n1unb")
 
-[node name="DMG" parent="." instance=ExtResource("3_d2dhs")]
+[node name="DMG" parent="." instance=ExtResource("3_amcns")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
 position = Vector2(0, -30)

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cptxah3l8j1bc" path="res://Scenes/Spawners/spawner.tscn" id="7_ab1r4"]
 [ext_resource type="PackedScene" uid="uid://b1is1ln2jeujs" path="res://Scenes/Items-Effectors/gem.tscn" id="8_qharn"]
 [ext_resource type="PackedScene" uid="uid://cco34s8em48qf" path="res://Scenes/Obsticals/Hazards/Spikes.tscn" id="9_db0oq"]
-[ext_resource type="PackedScene" uid="uid://tthcvddrm1xa" path="res://Scenes/enemies.tscn" id="9_sutyr"]
+[ext_resource type="PackedScene" uid="uid://tthcvddrm1xa" path="res://Scenes/Obsticals/Enemies/enemies.tscn" id="9_iuxd2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dmga"]
 texture = ExtResource("4_okono")
@@ -697,7 +697,7 @@ scale = Vector2(1.19828, 1.57336)
 
 [node name="Spawner" parent="." instance=ExtResource("7_ab1r4")]
 position = Vector2(1183, 543)
-scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq"), ExtResource("9_sutyr")])
+scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq"), ExtResource("9_iuxd2")])
 
 [node name="Player" parent="." instance=ExtResource("6_81qqv")]
 position = Vector2(158, 518)
