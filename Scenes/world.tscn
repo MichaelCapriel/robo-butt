@@ -694,8 +694,6 @@ layer_0/tile_data = PackedInt32Array(1114111, 851968, 13, 1048575, 851968, 13, 9
 position = Vector2(-104, 569)
 scale = Vector2(1.19828, 1.57336)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground"]
-
 [node name="Spawner" parent="." instance=ExtResource("7_ab1r4")]
 position = Vector2(1183, 543)
 scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq")])
