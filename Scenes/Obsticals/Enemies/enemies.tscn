@@ -7,7 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
 
 [node name="enemies" type="Node2D"]
+position = Vector2(0, 28)
+scale = Vector2(1.3899, 1.22593)
 script = ExtResource("1_8ht00")
+scroll_speed = 6.75
 
 [node name="Idle1" type="Sprite2D" parent="."]
 position = Vector2(-1, -32)
@@ -16,7 +19,7 @@ texture = ExtResource("2_n1unb")
 [node name="DMG" parent="." instance=ExtResource("3_amcns")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
-position = Vector2(0, -30)
+position = Vector2(-2.15843, -26.9183)
 scale = Vector2(1.4, 2.32657)
 shape = SubResource("CircleShape2D_ek8gv")
 
