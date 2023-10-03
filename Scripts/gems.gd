@@ -1,11 +1,12 @@
 extends "ScrollMovement.gd"
 
+
 func _physics_process(_delta):
 	move()
 
 func _on_pick_up_body_entered(body):
 	if body.name == "Player":
-		#Signals.emit_signal("RewardPLayer", 1)
+		Signals.emit_signal("rewardPlayer", 1)
 		queue_free()
 		print("picked up")
 

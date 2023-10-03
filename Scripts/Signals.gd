@@ -1,3 +1,5 @@
-#signal killPlayer
-#signal rewardPlayer
-#signal updateScore
+extends Node2D
+
+signal killPlayer
+signal rewardPlayer
+signal updateScore

@@ -6,11 +6,15 @@ const FRICTION = 10.0
 @export var GROUND_POUND_FALL_SPEED: float = 1000.0
 
 var is_ground_pound: bool = false
+
 var score = 0
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
 @onready var anim = get_node("AnimationPlayer")
+func _ready():
+	Signals.connect("rewardPlayer", player_Rewarded)
 
 func _physics_process(delta: float) -> void:
 	if not is_ground_pound:
@@ -54,4 +58,6 @@ func _collide(collision: KinematicCollision2D):
 func _end_ground_pound():
 			is_ground_pound = false
 
-#func rewardPlayer(scoreToAdd)
+func player_Rewarded(scoreToAdd):
+	score+=scoreToAdd
+	print(score)
