@@ -8,6 +8,7 @@
 size = Vector2(44, 17)
 
 [node name="Spikes" type="Node2D"]
+position = Vector2(0, 4)
 script = ExtResource("1_lcutx")
 scroll_speed = 6.75
 
