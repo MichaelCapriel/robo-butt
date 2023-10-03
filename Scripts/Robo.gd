@@ -10,7 +10,7 @@ var score = 0
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-#@onready var anim = get_node("AnimationPlayer")
+@onready var anim = get_node("AnimationPlayer")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 			_start_ground_pound()
 			
 
-	#if velocity.y == 0:
-		#$AnimationPlayer.play("Run")
+	if velocity.y == 0 and is_on_floor():
+		anim.play("Run")
 		
 	if velocity.y < 0:
 		$AnimationPlayer.play("Fall")
@@ -53,5 +53,7 @@ func _ground_pound_move():
 
 func _end_ground_pound():
 	is_ground_pound = false
+	if velocity.y > 0:
+		anim.play("Run")
 
 #func rewardPlayer(scoreToAdd)

@@ -356,7 +356,6 @@ shape = SubResource("RectangleShape2D_qh4bl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
-autoplay = "Run"
 libraries = {
 "": SubResource("AnimationLibrary_qurio")
 }
