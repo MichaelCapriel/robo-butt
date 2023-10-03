@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		print("Jumping")
 		
 	if Input.is_action_just_pressed("ui_down") and not is_on_floor():
-			print("working")
+			print("Slamming")
 			_start_ground_pound()
 			
 
@@ -41,11 +41,11 @@ func _physics_process(delta: float) -> void:
 
 func _collide(collision: KinematicCollision2D):
 	if is_on_floor() and is_ground_pound:
-		$AnimationPlayer.play("SlamDOWN")
+		#$AnimationPlayer.play("SlamDOWN")
 
 func _start_ground_pound():
 	is_ground_pound = true
-	velocity = Vector2.ZERO
+	velocity = Vector2.ONE
 	$AnimationPlayer.play("SlamStart")
 
 func _ground_pound_move():
@@ -53,7 +53,8 @@ func _ground_pound_move():
 
 func _end_ground_pound():
 	is_ground_pound = false
-	if velocity.y > 0:
+	velocity = Vector2.ZERO
+	if velocity.y == 0:
 		anim.play("Run")
 
 #func rewardPlayer(scoreToAdd)
