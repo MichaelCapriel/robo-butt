@@ -17,6 +17,8 @@ position = Vector2(-1, -32)
 texture = ExtResource("2_n1unb")
 
 [node name="DMG" parent="." instance=ExtResource("3_amcns")]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
 position = Vector2(-2.15843, -26.9183)
