@@ -702,3 +702,5 @@ scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq"), Ext
 [node name="Player" parent="." instance=ExtResource("6_81qqv")]
 position = Vector2(158, 518)
 scale = Vector2(0.360001, 0.360001)
+SPEED = 300.0
+GROUND_POUND_FALL_SPEED = 1000.0
