@@ -4,6 +4,7 @@ var score = 0
 
 func new_game():
 	score = 0
+	$StartTimer.start()
 	$ScoreTimer.start()
 
 func game_over():

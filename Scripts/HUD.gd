@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends CanvasLayer 
 
 signal start_game
 
@@ -13,7 +13,6 @@ func update_score(score):
 func player_Rewarded(scoreToAdd):
 	score+=scoreToAdd
 	Signals.emit_signal("updateScore",score)
-	print(score)
 
 func show_message(text):
 	$MessageLabel.text = text

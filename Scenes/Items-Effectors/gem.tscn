@@ -9,6 +9,7 @@
 [node name="Gem" type="Node2D"]
 position = Vector2(0, -74)
 script = ExtResource("1_sfvbv")
+scroll_speed = 7.0
 
 [node name="PickUp" parent="." instance=ExtResource("2_i0d7x")]
 
