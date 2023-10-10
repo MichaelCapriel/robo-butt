@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7o5dprjugcsf"]
+[gd_scene load_steps=15 format=3 uid="uid://b7o5dprjugcsf"]
 
 [ext_resource type="PackedScene" uid="uid://biy8ikmcr15c2" path="res://Scenes/Backgrounds/FGBG/Background.tscn" id="1_aggoy"]
 [ext_resource type="PackedScene" uid="uid://drxuoew3d7xea" path="res://Scenes/Backgrounds/FGBG/near_bg.tscn" id="1_by6bi"]
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_r8nqo"]
 [ext_resource type="PackedScene" uid="uid://c3q4vcv4vh4sv" path="res://Scenes/Backgrounds/FGBG/midground.tscn" id="2_ah1yk"]
 [ext_resource type="PackedScene" uid="uid://d0bdbolj0gdg6" path="res://Scenes/Backgrounds/FGBG/foreground.tscn" id="2_q5j2c"]
 [ext_resource type="Texture2D" uid="uid://dxiii1carjos4" path="res://Assests/Background/WarpCity1/Tilesets/WarpCity1Tileset.png" id="4_okono"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b1is1ln2jeujs" path="res://Scenes/Items-Effectors/gem.tscn" id="8_qharn"]
 [ext_resource type="PackedScene" uid="uid://cco34s8em48qf" path="res://Scenes/Obsticals/Hazards/Spikes.tscn" id="9_db0oq"]
 [ext_resource type="PackedScene" uid="uid://tthcvddrm1xa" path="res://Scenes/Obsticals/Enemies/enemies.tscn" id="9_iuxd2"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/HUD.tscn" id="11_8xmeb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dmga"]
 texture = ExtResource("4_okono")
@@ -671,18 +673,20 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7dmga")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_r8nqo")
 
 [node name="Background" parent="." instance=ExtResource("1_aggoy")]
 position = Vector2(-33, 6)
-scale = Vector2(1.04013, 0.984711)
+scale = Vector2(1.05573, 0.999481)
 
 [node name="Midground" parent="." instance=ExtResource("2_ah1yk")]
 texture_filter = 1
-position = Vector2(-5, -28)
+position = Vector2(-21, -18)
+scale = Vector2(1.03204, 1.05298)
 
 [node name="NearBG" parent="." instance=ExtResource("1_by6bi")]
 position = Vector2(-26, -48)
-scale = Vector2(1.18461, 1.10292)
+scale = Vector2(1.19043, 1.10834)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2.2535, 2.24413)
@@ -693,12 +697,22 @@ layer_0/tile_data = PackedInt32Array(1114111, 851968, 13, 1048575, 851968, 13, 9
 
 [node name="Foreground" parent="." instance=ExtResource("2_q5j2c")]
 position = Vector2(-104, 569)
-scale = Vector2(1.19828, 1.57336)
+scale = Vector2(1.198, 1.763)
 
 [node name="Spawner" parent="." instance=ExtResource("7_ab1r4")]
 position = Vector2(1183, 543)
 scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq"), ExtResource("9_iuxd2")])
 
+[node name="Spawner1Timer" type="Timer" parent="Spawner"]
+
 [node name="Player" parent="." instance=ExtResource("6_81qqv")]
-position = Vector2(158, 518)
+position = Vector2(90, 509)
 scale = Vector2(0.360001, 0.360001)
+
+[node name="HUD" parent="." instance=ExtResource("11_8xmeb")]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

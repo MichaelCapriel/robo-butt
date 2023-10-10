@@ -27,7 +27,6 @@ shape = SubResource("CircleShape2D_ek8gv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DMG"]
 position = Vector2(-1, -32)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(6.03633, -19.3896, 8.91424, -16.1267, 11.7921, -11.2325, 13.9506, -3.89112, 13.9506, 9.1602, 7.47529, 17.3173, 13.2311, 30.3686, -14.109, 30.3686, -9.79214, 17.3173, -16.9869, 8.34449, -16.9869, -3.89112, -14.8285, -10.4168, -11.2311, -16.9424, -6.91424, -20.2053, -0.438952, -21.8367)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
