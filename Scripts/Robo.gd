@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const FRICTION = 10.0
 @export var SPEED: float = 300.0
