@@ -13,8 +13,15 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 @onready var anim = get_node("AnimationPlayer")
+
 func _ready():
 	Signals.connect("rewardPlayer", player_Rewarded)
+	Signals.connect("killPlayer", player_Killed)
+
+func start(new_position):
+	position = new_position
+	show()
+	$CollisionShape2D.disabled = false
 
 func _physics_process(delta: float) -> void:
 	if not is_ground_pound:
@@ -60,4 +67,10 @@ func _end_ground_pound():
 
 func player_Rewarded(scoreToAdd):
 	score+=scoreToAdd
+	#Signals.emit_signal("updateScore",score)
 	print(score)
+
+func player_Killed():
+	hide()
+	$CollisionShape2D.set_deferred("disabled", true)
+	emit_signal("killPlayer")

@@ -673,8 +673,8 @@ sources/0 = SubResource("TileSetAtlasSource_7dmga")
 [node name="World" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_aggoy")]
-position = Vector2(-1, -105)
-scale = Vector2(1.00013, 0.904711)
+position = Vector2(-33, 6)
+scale = Vector2(1.04013, 0.984711)
 
 [node name="Midground" parent="." instance=ExtResource("2_ah1yk")]
 texture_filter = 1

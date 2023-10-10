@@ -13,15 +13,23 @@ script = ExtResource("1_sfvbv")
 [node name="PickUp" parent="." instance=ExtResource("2_i0d7x")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickUp"]
+visible = false
 position = Vector2(0, 4)
 scale = Vector2(2.04, 1.74646)
 shape = SubResource("CircleShape2D_4uy6c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PickUp"]
+position = Vector2(1, 11)
+polygon = PackedVector2Array(12, -23, 24, -12, 24, -7, 2, 14, 2, 16, -4, 16, -4, 14, -26, -8, -26, -11, -14, -23, -14, -25, 12, -25)
 
 [node name="Gem1" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
 texture = ExtResource("1_nomfe")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 2)
+rotation = -0.792989
+scale = Vector2(1.87531, 1.79439)
 
 [connection signal="body_entered" from="PickUp" to="." method="_on_pick_up_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

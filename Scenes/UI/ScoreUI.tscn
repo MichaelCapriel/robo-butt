@@ -1,3 +1,52 @@
-[gd_scene format=3 uid="uid://hivjlvx1dac0"]
+[gd_scene load_steps=4 format=3 uid="uid://hivjlvx1dac0"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/ScoreUpdateUI.gd" id="1_0303w"]
+
+[sub_resource type="SystemFont" id="SystemFont_himc5"]
+font_names = PackedStringArray("ROG Fonts")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_j7jea"]
+font_names = PackedStringArray("ROG Fonts")
+
+[node name="ScoreUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score_Number" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 4.0
+offset_right = 1149.0
+offset_bottom = 54.0
+theme_override_fonts/normal_font = SubResource("SystemFont_himc5")
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+script = ExtResource("1_0303w")
+
+[node name="Score_Name" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 4.0
+offset_right = 1041.0
+offset_bottom = 54.0
+theme_override_fonts/normal_font = SubResource("SystemFont_himc5")
+theme_override_font_sizes/normal_font_size = 32
+text = "Score:"
+
+[node name="Score_Display" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 4.0
+offset_right = 1137.0
+offset_bottom = 46.0
+theme_override_fonts/font = SubResource("SystemFont_j7jea")
+theme_override_font_sizes/font_size = 32
+text = "0"

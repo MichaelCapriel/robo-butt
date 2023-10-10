@@ -17,10 +17,16 @@ texture = ExtResource("2_i13s1")
 [node name="DMG" parent="." instance=ExtResource("2_rns6i")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
+visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_q82x1")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DMG"]
+polygon = PackedVector2Array(4, 9, 9, 9, 14, 6, 16, -3, 18, -3, 20, 6, 25, 11, 25, 25, 9, 25, 5, 23, -5, 23, -9, 25, -25, 25, -25, 11, -20, 6, -18, -3, -16, -3, -14, 6, -10, 9, -4, 9, -4, 6, -1, -4, 1, -4, 4, 6)
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.43051e-06, 15)
+scale = Vector2(2.5, 1)
 
 [connection signal="body_entered" from="DMG" to="." method="_on_dmg_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
