@@ -50,8 +50,6 @@ func _start_ground_pound():
 
 func _ground_pound_move():
 	velocity = Vector2(0, GROUND_POUND_FALL_SPEED)
-	if is_ground_pound == true:
-		pass
 
 func _collide(collision: KinematicCollision2D):
 	if is_on_floor() and is_ground_pound:
