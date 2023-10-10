@@ -702,3 +702,10 @@ scenes = Array[PackedScene]([ExtResource("8_qharn"), ExtResource("9_db0oq"), Ext
 [node name="Player" parent="." instance=ExtResource("6_81qqv")]
 position = Vector2(158, 518)
 scale = Vector2(0.360001, 0.360001)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 59.0
+offset_top = 37.0
+offset_right = 148.0
+offset_bottom = 63.0
+text = "points: 0"

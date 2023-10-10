@@ -12,6 +12,7 @@ var score = 0
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+signal in_ground_pound(groundPound:bool)
 
 @onready var anim = get_node("AnimationPlayer")
 func _ready():
@@ -50,6 +51,7 @@ func _start_ground_pound():
 
 func _ground_pound_move():
 	velocity = Vector2(0, GROUND_POUND_FALL_SPEED)
+	in_ground_pound.emit(in_ground_pound)
 
 func _collide(collision: KinematicCollision2D):
 	if is_on_floor() and is_ground_pound:
@@ -62,3 +64,7 @@ func _end_ground_pound():
 func player_Rewarded(scoreToAdd):
 	score+=scoreToAdd
 	print(score)
+
+
+func _on_in_ground_pound(groundPound):
+	emit_signal("in_ground_pound", true)

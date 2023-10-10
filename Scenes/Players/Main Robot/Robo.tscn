@@ -364,3 +364,5 @@ root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_qurio")
 }
+
+[connection signal="in_ground_pound" from="." to="." method="_on_in_ground_pound"]

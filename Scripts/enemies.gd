@@ -3,11 +3,12 @@ class_name Enemy
 
 var _isKilled = false
 
+
 func _physics_process(_delta):
 	move()
 
 func _on_dmg_body_entered(body):
-	if body.name == "Player" && _isKilled == false:
+	if body.name == "Player" and _isKilled == false:
 		print("player died")
 		queue_free()
 
