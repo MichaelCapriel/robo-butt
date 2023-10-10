@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://tthcvddrm1xa"]
+[gd_scene load_steps=6 format=3 uid="uid://tthcvddrm1xa"]
 
 [ext_resource type="Script" path="res://Scripts/enemies.gd" id="1_8ht00"]
 [ext_resource type="Texture2D" uid="uid://djxgi2vs77tci" path="res://Assests/Sprites/Enemies/idle1.png" id="2_n1unb"]
 [ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="3_amcns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vooe"]
+size = Vector2(17.5908, 2.03927)
 
 [node name="enemies" type="Node2D"]
 position = Vector2(0, 28)
@@ -27,5 +30,13 @@ shape = SubResource("CircleShape2D_ek8gv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="slamKill" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slamKill"]
+position = Vector2(-2.8779, -51.3896)
+shape = SubResource("RectangleShape2D_2vooe")
+one_way_collision = true
+
 [connection signal="body_entered" from="DMG" to="." method="_on_dmg_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="slamKill" to="." method="_on_slam_kill_body_entered"]
