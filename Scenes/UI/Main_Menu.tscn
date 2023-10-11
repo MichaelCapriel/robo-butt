@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhw6t00sbg2dr"]
+
+[ext_resource type="PackedScene" uid="uid://biy8ikmcr15c2" path="res://Scenes/Backgrounds/FGBG/Background.tscn" id="1_o6qmp"]
+[ext_resource type="PackedScene" uid="uid://c3q4vcv4vh4sv" path="res://Scenes/Backgrounds/FGBG/midground.tscn" id="2_lio8y"]
+[ext_resource type="PackedScene" uid="uid://drxuoew3d7xea" path="res://Scenes/Backgrounds/FGBG/near_bg.tscn" id="3_e5hcb"]
+[ext_resource type="PackedScene" uid="uid://d0bdbolj0gdg6" path="res://Scenes/Backgrounds/FGBG/foreground.tscn" id="4_b4dj3"]
+[ext_resource type="Script" path="res://Scripts/Menu_Container.gd" id="5_haucf"]
+[ext_resource type="PackedScene" uid="uid://b7o5dprjugcsf" path="res://Scenes/UI/world.tscn" id="6_cn6ii"]
+
+[sub_resource type="SystemFont" id="SystemFont_dcjhu"]
+font_names = PackedStringArray("ROG Fonts")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_f5fu8"]
+font_names = PackedStringArray("ROG Fonts")
+subpixel_positioning = 0
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" parent="." instance=ExtResource("1_o6qmp")]
+position = Vector2(-33, 6)
+scale = Vector2(1.05573, 0.999481)
+
+[node name="Midground" parent="." instance=ExtResource("2_lio8y")]
+texture_filter = 1
+position = Vector2(-21, -18)
+scale = Vector2(1.03204, 1.05298)
+
+[node name="NearBG" parent="." instance=ExtResource("3_e5hcb")]
+position = Vector2(-26, -48)
+scale = Vector2(1.19043, 1.10834)
+
+[node name="Foreground" parent="." instance=ExtResource("4_b4dj3")]
+position = Vector2(-104, 569)
+scale = Vector2(1.198, 1.763)
+
+[node name="MessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.864
+offset_top = 242.845
+offset_right = 768.864
+offset_bottom = 289.845
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_dcjhu")
+theme_override_font_sizes/font_size = 36
+text = "Robot Runner"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Menu_Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 292.0
+offset_right = 584.0
+offset_bottom = 332.0
+script = ExtResource("5_haucf")
+sceneToLoad = ExtResource("6_cn6ii")
+
+[node name="StartButton" type="Button" parent="Menu_Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_f5fu8")
+text = "START"
+
+[connection signal="pressed" from="Menu_Container/StartButton" to="Menu_Container" method="_on_button_pressed"]

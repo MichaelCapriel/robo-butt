@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://tthcvddrm1xa"]
+
+[ext_resource type="Script" path="res://Scripts/enemies.gd" id="1_wi8rj"]
+[ext_resource type="Texture2D" uid="uid://djxgi2vs77tci" path="res://Assests/Sprites/Enemies/idle1.png" id="2_fvti2"]
+[ext_resource type="PackedScene" uid="uid://d3ibij0xqp3d0" path="res://Scenes/Items-Effectors/TakeDmg.tscn" id="3_iyjv3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
+
+[node name="EggEnemy" type="Node2D"]
+position = Vector2(0, 28)
+scale = Vector2(1.3899, 1.22593)
+script = ExtResource("1_wi8rj")
+scroll_speed = 6.75
+
+[node name="Idle1" type="Sprite2D" parent="."]
+position = Vector2(-1, -32.3126)
+scale = Vector2(1, 1.01008)
+texture = ExtResource("2_fvti2")
+
+[node name="DMG" parent="." instance=ExtResource("3_iyjv3")]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DMG"]
+visible = false
+position = Vector2(-2.15843, -26.9183)
+scale = Vector2(1.4, 2.32657)
+shape = SubResource("CircleShape2D_ek8gv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DMG"]
+position = Vector2(-1, -32)
+polygon = PackedVector2Array(7.47529, -17.7581, 11.7921, -11.2325, 13.9506, -3.89112, 13.9506, 9.1602, 7.47529, 17.3173, 13.2311, 30.3686, -14.109, 30.3686, -9.79214, 17.3173, -16.9869, 8.34449, -16.9869, -3.89112, -14.8285, -10.4168, -10.5116, -17.7581)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2.48183, -12.1299)
+scale = Vector2(1.54324, 1.071)
+
+[node name="slamKill" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slamKill"]
+position = Vector2(-1.45992, -32.6283)
+scale = Vector2(1.08266, 1.1875)
+polygon = PackedVector2Array(2.15843, -17.9456, 7.32939, -14.4251, -9.2843, -14.4251, -4.31686, -17.9456)
+
+[connection signal="body_entered" from="DMG" to="." method="_on_dmg_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="slamKill" to="." method="kill_the_enemy"]

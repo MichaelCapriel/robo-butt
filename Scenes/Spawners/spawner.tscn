@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cptxah3l8j1bc"]
 
 [ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_dg07l"]
-[ext_resource type="PackedScene" uid="uid://b1is1ln2jeujs" path="res://Scenes/Items-Effectors/gem.tscn" id="2_n8218"]
+[ext_resource type="PackedScene" uid="uid://b1is1ln2jeujs" path="res://Scenes/Items-Effectors/gem.tscn" id="2_x8j1a"]
 [ext_resource type="PackedScene" uid="uid://cco34s8em48qf" path="res://Scenes/Obsticals/Hazards/Spikes.tscn" id="3_dea2s"]
-[ext_resource type="PackedScene" uid="uid://tthcvddrm1xa" path="res://Scenes/Obsticals/Enemies/enemies.tscn" id="4_qaxjn"]
+[ext_resource type="PackedScene" uid="uid://tthcvddrm1xa" path="res://Scenes/Obsticals/Enemies/EggEnemy.tscn" id="4_iolnq"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_dg07l")
-scenes = Array[PackedScene]([ExtResource("2_n8218"), ExtResource("3_dea2s"), ExtResource("4_qaxjn")])
+scenes = Array[PackedScene]([ExtResource("2_x8j1a"), ExtResource("3_dea2s"), ExtResource("4_iolnq")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

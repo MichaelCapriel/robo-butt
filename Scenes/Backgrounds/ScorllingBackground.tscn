@@ -9,4 +9,3 @@ shader_parameter/scroll_speed = 0.2
 
 [node name="ScrollingBackground" type="TextureRect"]
 material = SubResource("ShaderMaterial_43l51")
-stretch_mode = 1
