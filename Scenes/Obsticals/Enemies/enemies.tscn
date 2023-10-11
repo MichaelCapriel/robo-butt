@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ek8gv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vooe"]
-size = Vector2(17.5908, 2.03927)
+size = Vector2(23.7427, 3.46672)
 
 [node name="enemies" type="Node2D"]
 position = Vector2(0, 28)
